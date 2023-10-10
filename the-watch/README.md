@@ -23,4 +23,5 @@ O projeto "The Watch" consiste em criar uma página web que exibe relógios digi
 
 ## Projeto implementado
 
-[Projeto implementado](https://the-watch.vercel.app/)
+[Projeto implementado(CodePen)](https://codepen.io/eloak/pen/mdavoQg)
+[Projeto implementado(Vercel)](https://the-watch.vercel.app/)

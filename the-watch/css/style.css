@@ -6,6 +6,11 @@
     font-family: 'Cabin', sans-serif;
     color: aliceblue;
 }
+a{
+    text-decoration: none;
+    color: aliceblue;
+    text-decoration: underline;
+}
 body {
     display: flex;
     justify-content: center;

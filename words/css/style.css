@@ -44,6 +44,16 @@ h1{
     text-transform: uppercase;
 }
 
+.turn {
+    outline: 5px solid #394941;
+    background: none;
+}
+
+.turn:focus-within {
+    /* Muda o background color da div pai */
+    background: #fff;
+   }
+
 .keyboard{
     margin-block: 60px;
     display: flex;

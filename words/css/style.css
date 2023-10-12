@@ -78,7 +78,7 @@ h1{
 
 
 .keyboard{
-    margin-block: 6rem;
+    margin-block: 4.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -150,7 +150,7 @@ h1{
 
 footer p {
     text-align: center;
-    font-size: 1.4rem;
+    font-size: 2.4rem;
     font-weight: 200;
     font-family: 'Cabin', sans-serif;
     letter-spacing: .2rem;

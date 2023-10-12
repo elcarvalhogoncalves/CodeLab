@@ -259,6 +259,7 @@ document.addEventListener("keydown", (event) => {
 });
 
 function keyboardIt (letter){
+    playSound("click");
     const playKey = (l) => {
         tableGame[turn][position] = l;
         play();
@@ -406,6 +407,7 @@ function keyboardIt (letter){
                 break;
             case "Enter":
                 if(tableGame[turn].includes("")){
+                    playSound("error");
                     showMessage(`Use palavras com 5 letras.`);
                 } else {
                     closeMessage();
@@ -416,6 +418,7 @@ function keyboardIt (letter){
                     if(tableGame[turn-1].join('') == words){
                         setWinner();
                     } else if(turn > 5 && winner == false){
+                        playSound("lose");
                         showResult();
                     }
                 }
@@ -513,6 +516,7 @@ enter.addEventListener("click", () => {
 });
 
 function setWinner(){
+    playSound("win");
     winner = true;
     const listRows = document.querySelectorAll(".table-row");
     const column = listRows[turn-1].querySelectorAll(".table-cell");
@@ -527,12 +531,15 @@ function setWinner(){
 
 function showResult(){
     if(winner){
-        document.querySelector(".modal").innerHTML = `<p>YOU WIN</p><p>Resposta: ${words}</p>`;
+        document.querySelector(".modal").innerHTML = `<p>YOU WIN</p><p>Resposta: ${words}</p> <button id="reload">Jogar Novamente</button>`;
         document.querySelector(".modal").classList.add("win-color");
     } else {
-        document.querySelector(".modal").innerHTML = `<p>YOU LOSE</p><p>Resposta: ${words}</p>`;
+        document.querySelector(".modal").innerHTML = `<p>YOU LOSE</p><p>Resposta: ${words}</p> <button id="reload">Jogar Novamente</button>`;
         document.querySelector(".modal").classList.add("lose-color");
     }
+    document.getElementById("reload").addEventListener("click", () => {
+        window.location.reload();
+    })
 }
 
 function showMessage (message) {
@@ -549,5 +556,30 @@ function closeMessage () {
     document.querySelector(".message").innerHTML = "";
 }
 
+function playSound(effect) {
+    const sound = document.getElementById(effect);
+    sound.pause
+    switch (effect) {
+        case "click":
+            sound.volume = 0.05;
+            break;
+        case "win":
+            sound.volume = 0.1;
+            break;
+        case "lose":
+            sound.volume = 0.1;
+            break;
+        case "error":
+            sound.volume = 0.1;
+        default:
+            break;  
+    }
+    var isPlaying = sound.currentTime > 0 && !sound.paused && !sound.ended 
+    && sound.readyState > sound.HAVE_CURRENT_DATA;
+
+    if (!isPlaying) {
+        sound.play();
+    }
+}
 
 startGame(turn);

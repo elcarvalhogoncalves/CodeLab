@@ -24,7 +24,7 @@ const wordList =
     "subiu",
     "topou",
     "toque",
-    "traís",
+    "traia",
     "trema",
     "turbo",    
     "votei",
@@ -33,14 +33,12 @@ const wordList =
     "zomba",
 ];
 
-
 function wordsGenerator() {
     const indiceAleatorio = Math.floor(Math.random() * wordList.length);
     return wordList[indiceAleatorio];
 };
 
 const words = wordsGenerator();
-console.log(words, "");
 
 let turn = 0;
 let position = 0;
@@ -94,7 +92,6 @@ function startGame(turn) {
 }
 
 function checkKeyboard(letter, status){
-    console.log("AADJFLÇKMÇMÇ----");
     const stts = status;
     switch (stts) {
         case "ok":
@@ -160,222 +157,359 @@ function play(){
 }
 
 const reloadButton = document.getElementById("reload");
-// const am = document.getElementById("reload");
-// am.addEventListener("click", () => {
-//     location.reload();
-// });
+
+document.addEventListener("keydown", (event) => {
+    switch (event.key) {
+        case "ArrowLeft":
+            if(position > 0){
+                position-=2;
+            }
+            play();
+            break;
+        case "ArrowRight":
+            play();
+            break;
+        case "q":
+            keyboardIt(event.key);
+            break;
+        case "w":
+            keyboardIt(event.key);
+            break;
+        case "e":
+            keyboardIt(event.key);
+            break;
+        case "r":
+            keyboardIt(event.key);
+            break;
+        case "t":
+            keyboardIt(event.key);
+            break;
+        case "y":
+            keyboardIt(event.key);
+            break;
+        case "u":
+            keyboardIt(event.key);
+            break;
+        case "i":
+            keyboardIt(event.key);
+            break;
+        case "o":
+            keyboardIt(event.key);
+            break;
+        case "p":
+            keyboardIt(event.key);
+            break;
+        case "a":
+            keyboardIt(event.key);
+            break;
+        case "s":
+            keyboardIt(event.key);
+            break;
+        case "d":
+            keyboardIt(event.key);
+            break;
+        case "f":
+            keyboardIt(event.key);
+            break;
+        case "g":
+            keyboardIt(event.key);
+            break;
+        case "h":
+            keyboardIt(event.key);
+            break;
+        case "j":
+            keyboardIt(event.key);
+            break;
+        case "k":
+            keyboardIt(event.key);
+            break;
+        case "l":
+            keyboardIt(event.key);
+            break;
+        case "Backspace":
+            keyboardIt(event.key);
+            break;
+        case "z":
+            keyboardIt(event.key);
+            break;
+        case "x":
+            keyboardIt(event.key);
+            break;
+        case "c":
+            keyboardIt(event.key);
+            break;
+        case "v":
+            keyboardIt(event.key);
+            break;
+        case "b":
+            keyboardIt(event.key);
+            break;
+        case "n":
+            keyboardIt(event.key);
+            break;
+        case "m":
+            keyboardIt(event.key);
+            break;
+        case "Enter":
+            keyboardIt(event.key);
+            break;
+        default:
+            break;
+    }
+});
+
+function keyboardIt (letter){
+    const playKey = (l) => {
+        tableGame[turn][position] = l;
+        play();
+    };
+    if(turn < 6 && winner == false){
+        switch (letter) {
+            case "q":
+                if(q.getAttribute("check") == "false"){
+                    playKey(letter);
+                }
+                break;
+            case "w":
+                if(w.getAttribute("check") == "false"){
+                    playKey(letter);
+                }
+                break;
+            case "e":
+                if(e.getAttribute("check") == "false"){
+                    playKey(letter);
+                }
+                break;
+            case "r":
+                if(r.getAttribute("check") == "false"){
+                    playKey(letter);
+                }
+                break;
+            case "t":
+                if(t.getAttribute("check") == "false"){
+                    playKey(letter);
+                }
+                break;
+            case "y":
+                if(y.getAttribute("check") == "false"){
+                    playKey(letter);
+                }
+                break;
+            case "u":
+                if(u.getAttribute("check") == "false"){
+                    playKey(letter);
+                }
+                break;
+            case "i":
+                if(i.getAttribute("check") == "false"){
+                    playKey(letter);
+                }
+                break;
+            case "o":
+                if(o.getAttribute("check") == "false"){
+                    playKey(letter);
+                }
+                break;
+            case "p":
+                if(p.getAttribute("check") == "false"){
+                    playKey(letter);
+                }
+                break;
+            case "a":
+                if(a.getAttribute("check") == "false"){
+                    playKey(letter);
+                }
+                break;
+            case "s":
+                if(s.getAttribute("check") == "false"){
+                    playKey(letter);
+                }
+                break;
+            case "d":
+                if(d.getAttribute("check") == "false"){
+                    playKey(letter);
+                }
+                break;
+            case "f":
+                if(f.getAttribute("check") == "false"){
+                    playKey(letter);
+                }
+                break;
+            case "g":
+                if(g.getAttribute("check") == "false"){
+                    playKey(letter);
+                }
+                break;
+            case "h":
+                if(h.getAttribute("check") == "false"){
+                    playKey(letter);
+                }
+                break;
+            case "j":
+                if(j.getAttribute("check") == "false"){
+                    playKey(letter);
+                }
+                break;
+            case "k":
+                if(k.getAttribute("check") == "false"){
+                    playKey(letter);
+                }
+                break;
+            case "l":
+                if(l.getAttribute("check") == "false"){
+                    playKey(letter);
+                }
+                break;
+            case "Backspace":
+                tableGame[turn][position] = "";
+                if(position > 0){
+                    position = position-2;
+                } else {
+                    position--;
+                }
+                play();
+                break;
+            case "z":
+                if(z.getAttribute("check") == "false"){
+                    playKey(letter);
+                }
+                break;
+            case "x":
+                if(x.getAttribute("check") == "false"){
+                    playKey(letter);
+                }
+                break;
+            case "c":
+                if(c.getAttribute("check") == "false"){
+                    playKey(letter);
+                }
+                break;
+            case "v":
+                if(v.getAttribute("check") == "false"){
+                    playKey(letter);
+                }
+                break;
+            case "b":
+                if(b.getAttribute("check") == "false"){
+                    playKey(letter);
+                }
+                break;
+            case "n":
+                if(n.getAttribute("check") == "false"){
+                    playKey(letter);
+                }
+                break;
+            case "m":
+                if(m.getAttribute("check") == "false"){
+                    playKey(letter);
+                }
+                break;
+            case "Enter":
+                if(tableGame[turn].includes("")){
+                    showMessage(`Use palavras com 5 letras.`);
+                } else {
+                    closeMessage();
+                    turn++;
+                    
+                    position = 0;
+                    startGame(turn);
+                    if(tableGame[turn-1].join('') == words){
+                        setWinner();
+                    } else if(turn > 5 && winner == false){
+                        showResult();
+                    }
+                }
+                break;
+            default:
+                break;
+        }
+    }
+}
 
 q.addEventListener("click", (letter) => {
-    if(q.getAttribute("check") == "false" && turn < 6){
-        console.log(printLetter(letter));
-        tableGame[turn][position] = printLetter(letter);
-        play();
-    }
+    keyboardIt(printLetter(letter));
 });
 
 w.addEventListener("click", (letter) => {
-    if(w.getAttribute("check") == "false" && turn < 6){
-        console.log(printLetter(letter));
-        tableGame[turn][position] = printLetter(letter);
-        play();
-    }
+    keyboardIt(printLetter(letter));
 });
 e.addEventListener("click", (letter) => {
-    if(e.getAttribute("check") == "false" && turn < 6){
-        console.log(printLetter(letter));
-        tableGame[turn][position] = printLetter(letter);
-        play();
-    }
+    keyboardIt(printLetter(letter));
 });
 r.addEventListener("click", (letter) => {
-    if(r.getAttribute("check") == "false" && turn < 6){
-        console.log(printLetter(letter));
-        tableGame[turn][position] = printLetter(letter);
-        play();
-    }
+    keyboardIt(printLetter(letter));
 });
 t.addEventListener("click", (letter) => {
-    if(t.getAttribute("check") == "false" && turn < 6){
-        console.log(printLetter(letter));
-        tableGame[turn][position] = printLetter(letter);
-        play();
-    }
+    keyboardIt(printLetter(letter));
 });
 y.addEventListener("click", (letter) => {
-    if(y.getAttribute("check") == "false" && turn < 6){
-        console.log(printLetter(letter));
-        tableGame[turn][position] = printLetter(letter);
-        play();
-    }
+    keyboardIt(printLetter(letter));
 });
 u.addEventListener("click", (letter) => {
-    if(u.getAttribute("check") == "false" && turn < 6){
-        console.log(printLetter(letter));
-        tableGame[turn][position] = printLetter(letter);
-        play();
-    }
+    keyboardIt(printLetter(letter));
 });
 i.addEventListener("click", (letter) => {
-    if(i.getAttribute("check") == "false" && turn < 6){
-        console.log(printLetter(letter));
-        tableGame[turn][position] = printLetter(letter);
-        play();
-    }
+    keyboardIt(printLetter(letter));
 });
 o.addEventListener("click", (letter) => {
-    if(o.getAttribute("check") == "false" && turn < 6){
-        console.log(printLetter(letter));
-        tableGame[turn][position] = printLetter(letter);
-        play();
-    }
+    keyboardIt(printLetter(letter));
 });
 p.addEventListener("click", (letter) => {
-    if(p.getAttribute("check") == "false" && turn < 6){
-        console.log(printLetter(letter));
-        tableGame[turn][position] = printLetter(letter);
-        play();
-    }
+    keyboardIt(printLetter(letter));
 });
 a.addEventListener("click", (letter) => {
-    if(a.getAttribute("check") == "false" && turn < 6){
-        console.log(printLetter(letter));
-        tableGame[turn][position] = printLetter(letter);
-        play();
-    }
+    keyboardIt(printLetter(letter));
 });
 s.addEventListener("click", (letter) => {
-    if(s.getAttribute("check") == "false" && turn < 6){
-        console.log(printLetter(letter));
-        tableGame[turn][position] = printLetter(letter);
-        play();
-    }
+    keyboardIt(printLetter(letter));
 });
 d.addEventListener("click", (letter) => {
-    if(d.getAttribute("check") == "false" && turn < 6){
-        console.log(printLetter(letter));
-        tableGame[turn][position] = printLetter(letter);
-        play();
-    }
+    keyboardIt(printLetter(letter));
 });
 f.addEventListener("click", (letter) => {
-    if(f.getAttribute("check") == "false" && turn < 6){
-        console.log(printLetter(letter));
-        tableGame[turn][position] = printLetter(letter);
-        play();
-    }
+    keyboardIt(printLetter(letter));
 });
 g.addEventListener("click", (letter) => {
-    if(g.getAttribute("check") == "false" && turn < 6){
-        console.log(printLetter(letter));
-        tableGame[turn][position] = printLetter(letter);
-        play();
-    }
+    keyboardIt(printLetter(letter));
 });
 h.addEventListener("click", (letter) => {
-    if(h.getAttribute("check") == "false" && turn < 6){
-        console.log(printLetter(letter));
-        tableGame[turn][position] = printLetter(letter);
-        play();
-    }
+    keyboardIt(printLetter(letter));
 });
 j.addEventListener("click", (letter) => {
-    if(j.getAttribute("check") == "false" && turn < 6){
-        console.log(printLetter(letter));
-        tableGame[turn][position] = printLetter(letter);
-        play();
-    }
+    keyboardIt(printLetter(letter));
 });
 k.addEventListener("click", (letter) => {
-    if(k.getAttribute("check") == "false" && turn < 6){
-        console.log(printLetter(letter));
-        tableGame[turn][position] = printLetter(letter);
-        play();
-    }
+    keyboardIt(printLetter(letter));
 });
 l.addEventListener("click", (letter) => {
-    if(l.getAttribute("check") == "false" && turn < 6){
-        console.log(printLetter(letter));
-        tableGame[turn][position] = printLetter(letter);
-        play();
-    }
+    keyboardIt(printLetter(letter));
 });
 bs.addEventListener("click", (letter) => {
-    if(turn < 6){
-        console.log(printLetter(letter));
-        tableGame[turn][position] = "";
-        if(position > 0){
-            position = position-2;
-        } else {
-            position--;
-        }
-        play();
-    }
+    keyboardIt("Backspace");
 });
 z.addEventListener("click", (letter) => {
-    if(z.getAttribute("check") == "false" && turn < 6){
-        console.log(printLetter(letter));
-        tableGame[turn][position] = printLetter(letter);
-        play();
-    }
+    keyboardIt(printLetter(letter));
 });
 x.addEventListener("click", (letter) => {
-    if(x.getAttribute("check") == "false" && turn < 6){
-        console.log(printLetter(letter));
-        tableGame[turn][position] = printLetter(letter);
-        play();
-    }
+    keyboardIt(printLetter(letter));
 });
 c.addEventListener("click", (letter) => {
-    if(c.getAttribute("check") == "false" && turn < 6){
-        console.log(printLetter(letter));
-        tableGame[turn][position] = printLetter(letter);
-        play();
-    }
+    keyboardIt(printLetter(letter));
 });
 v.addEventListener("click", (letter) => {
-    if(v.getAttribute("check") == "false" && turn < 6){
-        console.log(printLetter(letter));
-        tableGame[turn][position] = printLetter(letter);
-        play();
-    }
+    keyboardIt(printLetter(letter));
 });
 b.addEventListener("click", (letter) => {
-    if(b.getAttribute("check") == "false" && turn < 6){
-        console.log(printLetter(letter));
-        tableGame[turn][position] = printLetter(letter);
-        play();
-    }
+    keyboardIt(printLetter(letter));
 });
 n.addEventListener("click", (letter) => {
-    if(n.getAttribute("check") == "false" && turn < 6){
-        console.log(printLetter(letter));
-        tableGame[turn][position] = printLetter(letter);
-        play();
-    }
+    keyboardIt(printLetter(letter));
 });
 m.addEventListener("click", (letter) => {
-    if(m.getAttribute("check") == "false" && turn < 6){
-        console.log(printLetter(letter));
-        tableGame[turn][position] = printLetter(letter);
-        play();
-    }
+    keyboardIt(printLetter(letter));
 });
 enter.addEventListener("click", () => {
-    if(turn < 6){
-        if(tableGame[turn].includes("")){
-            showMessage(`Use palavras com 5 letras.`);
-        } else {
-            turn++;
-            if(turn > 5 && winner == false){
-                showResult();
-            }
-            position = 0;
-            startGame(turn);
-            if(tableGame[turn-1].join('') == words){
-                setWinner();
-            }
-        }
-    }
+    keyboardIt("Enter");
 });
 
 function setWinner(){
@@ -399,7 +533,6 @@ function showResult(){
         document.querySelector(".modal").innerHTML = `<p>YOU LOSE</p><p>Resposta: ${words}</p>`;
         document.querySelector(".modal").classList.add("lose-color");
     }
-    console.log(turn, "turn");
 }
 
 function showMessage (message) {
@@ -414,8 +547,6 @@ function showMessage (message) {
 
 function closeMessage () {
     document.querySelector(".message").innerHTML = "";
-    const listRows = document.querySelectorAll(".table-row");
-    listRows[turn].classList.remove("effect");
 }
 
 

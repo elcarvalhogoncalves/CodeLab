@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Koulen&display=swap');
 html {
-    font-size: 62.5%; /* 1rem = 10px */
+    font-size: calc(100vh / 100); /* 1rem = 10px */
 }
 body {
     font-size: 1.6rem;
@@ -15,10 +15,17 @@ body {
     flex-direction: column;
     position: relative;
 } 
+main{
+    padding-inline: 5rem;
+}
 .message{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    font-size: 2.4rem;
     background-color: #a33a3a;
 }
 a{
@@ -87,7 +94,14 @@ h1{
 
 .keyboard-row{
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+.keyboard-row div{
+    display: flex;
     gap: .5rem;
 }
 .keyboard-row:nth-child(2){
@@ -216,11 +230,12 @@ footer p {
 
 .modal{
     display: flex;
-    position: sticky;
+    position: absolute;
+    width: 100%;
     top: 0rem;
     justify-content: center;
     align-items: center;
-    color: #000;
+    color: #fff;
     gap: 4.5rem;
     padding: 0rem;
 }
@@ -236,7 +251,6 @@ footer p {
 .modal p:first-child{
     text-align: center;
     font-size: 5.2rem;
-    color: #fff;
 }
 .modal p{
     text-align: center;

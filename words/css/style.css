@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Koulen&display=swap');
-
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
 body {
-    margin: 0px;
-    padding: 0px;
+    font-size: 1.6rem;
+    margin: 0rem;
+    padding: 0rem;
     box-sizing: border-box;
     font-family: 'Koulen', cursive;
     color: aliceblue;
@@ -10,6 +13,7 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    position: relative;
 } 
 .message{
     display: flex;
@@ -23,7 +27,7 @@ a{
 }
 h1{
     text-align: center;
-    font-size: 52px;
+    font-size: 5.2rem;
     font-weight: 200;
     text-decoration: underline;
 }
@@ -39,15 +43,15 @@ h1{
     align-items: center;
 }
 .table-cell{
-    width: 70px;
-    height: 70px;
-    margin: 6.5px;
+    width: 7rem;
+    height: 7rem;
+    margin: .65rem;
     background-color: #4C5A53;
-    border-radius: 8px;
+    border-radius: .8rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 50px;
+    font-size: 5rem;
     font-weight: 200;
     text-align: center;
     text-transform: uppercase;
@@ -60,19 +64,19 @@ h1{
 }
 
 .turn {
-    outline: 5px solid #394941;
+    outline: .5rem solid #394941;
     background: none;           /* Possível implementação no futuro */
     cursor: pointer;
 }
 
 
 .keyboard{
-    margin-block: 60px;
+    margin-block: 6rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 5px;
+    gap: .5rem;
     -webkit-touch-callout: none;  /* iPhone OS, Safari */
     -webkit-user-select: none;    /* Chrome, Safari 3 */
     -khtml-user-select: none;     /* Safari 2 */
@@ -84,21 +88,21 @@ h1{
 .keyboard-row{
     display: flex;
     flex-direction: row;
-    gap: 5px;
+    gap: .5rem;
 }
 .keyboard-row:nth-child(2){
-    padding-left: 60px;
+    padding-left: 6rem;
 }
 
 .keyboard-cell{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: 3rem;
     font-weight: 200;
-    width: 60px;
-    height: 50px;
-    border-radius: 5px;
+    width: 6rem;
+    height: 5rem;
+    border-radius: .5rem;
     background: #394941;
     text-align: center;
     text-transform: uppercase;
@@ -106,12 +110,12 @@ h1{
 }
 
 .turn-focus{
-    outline: 5px solid #fff;
+    outline: .5rem solid #fff;
     background: none;
 }
 
 .enter {
-    width: 190px;
+    width: 19rem;
 }
 
 .ok {
@@ -132,15 +136,15 @@ h1{
 
 footer p {
     text-align: center;
-    font-size: 14px;
+    font-size: 1.4rem;
     font-weight: 200;
     font-family: 'Cabin', sans-serif;
-    letter-spacing: 2px;
+    letter-spacing: .2rem;
 }
 
 .figure{
-    width: 60px;
-    height: 50px;
+    width: 6rem;
+    height: 5rem;
     background-image: url(../images/bs.svg);
     background-size: 50%;
     background-repeat: no-repeat;
@@ -162,7 +166,7 @@ footer p {
         transition: .4s;
     }
     50% {
-        transform: translateY(25px);
+        transform: translateY(-2.5rem);
         transition: .4s;
     }
     100% {
@@ -177,15 +181,15 @@ footer p {
         transition: .4s;
     }
     12% {
-        transform: translateX(15px);
+        transform: translateX(1.5rem);
         transition: .4s;
     }
     25% {
-        transform: translateX(0px);
+        transform: translateX(0rem);
         transition: .4s;
     }
     37% {
-        transform: translateX(-15px);
+        transform: translateX(-1.5rem);
         transition: .4s;
     }
     50% {
@@ -193,19 +197,58 @@ footer p {
         transition: .4s;
     }
     62% {
-        transform: translateX(15px);
+        transform: translateX(1.5rem);
         transition: .4s;
     }
     75% {
-        transform: translateX(0px);
+        transform: translateX(0rem);
         transition: .4s;
     }
     87% {
-        transform: translateX(-15px);
+        transform: translateX(-1.5rem);
         transition: .4s;
     }
     100% {
         transform: translateX(0);
         transition: .4s;
     }
+}
+
+.modal{
+    display: flex;
+    position: sticky;
+    top: 0rem;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    gap: 4.5rem;
+    padding: 0rem;
+}
+
+.win-color{
+    background-color: rgba(13, 255, 0, 0.607);
+}
+
+.lose-color{
+    background-color: #a33a3a;
+}
+
+.modal p:first-child{
+    text-align: center;
+    font-size: 5.2rem;
+    color: #fff;
+}
+.modal p{
+    text-align: center;
+    font-size: 2.2rem;
+    margin: 0rem;
+}
+.modal button{
+    font-size: 1.8rem;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: .5rem;
+    background-color: #005944;
+    color: #fff;
+    cursor: pointer;
 }

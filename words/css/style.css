@@ -156,8 +156,8 @@ footer p {
 }
 
 .figure{
-    width: 6rem;
-    height: 5rem;
+    width: 5rem;
+    height: 4rem;
     background-image: url(../images/bs.svg);
     background-size: 50%;
     background-repeat: no-repeat;
@@ -272,11 +272,18 @@ footer p {
         margin: 0rem;
     }
     .keyboard-cell{
-        font-size: 1.5rem;
+
+        font-size: 2.4rem;
         width: 3rem;
-        height: 2.5rem;
+        height: 4rem;
     }
     .enter {
         width: 9rem;
+    }
+    .table-cell{
+        width: 5.5rem;
+        height: 5.5rem;
+        margin: .6rem;
+        font-size: 4rem;
     }
 }

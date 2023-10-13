@@ -14,9 +14,10 @@ body {
     justify-content: center;
     flex-direction: column;
     position: relative;
-    padding-inline: 3.5rem;
 } 
-
+main{
+    padding-inline: 3.5rem;
+}
 .message{
     display: flex;
     justify-content: center;
@@ -287,4 +288,29 @@ footer p {
     .keyboard-row:nth-child(2){
         padding-left: 0rem;
     }
+    .modal{
+        display: flex;
+        position: absolute;
+        width: 100vw;
+        flex-direction: column;
+        color: #fff;
+        gap: 1rem;
+        padding-bottom: 2rem;
+    }
+    
+    .modal p:first-child{
+
+        font-size: 4rem;
+
+
+    }
+    .modal p{
+        text-align: center;
+        font-size: 2.2rem;
+    }
+    .modal button{
+        font-size: 1.8rem;
+        padding: 1.3rem 2rem;
+    }
+
 }

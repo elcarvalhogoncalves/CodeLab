@@ -90,7 +90,6 @@ function startGame(turn) {
 
     });
 }
-
 function checkKeyboard(letter, status){
     const stts = status;
     switch (stts) {
@@ -102,7 +101,7 @@ function checkKeyboard(letter, status){
             break;
         case "wrong":
             document.getElementById(letter).classList.add("wrong-key");
-            document.getElementById(letter).setAttribute("check", "true");
+            // document.getElementById(letter).setAttribute("check", "true");
             break;
         default:
             break;
@@ -412,9 +411,9 @@ function keyboardIt (letter){
                 } else {
                     closeMessage();
                     turn++;
-                    
                     position = 0;
                     startGame(turn);
+                    // flipEffect();
                     if(tableGame[turn-1].join('') == words){
                         setWinner();
                     } else if(turn > 5 && winner == false){
@@ -427,6 +426,24 @@ function keyboardIt (letter){
                 break;
         }
     }
+}
+
+function flipEffect(){
+    const rows = document.querySelectorAll(".table-row");
+    const cells = rows[turn-1].querySelectorAll(".table-cell");
+    cells.forEach((cell, index) => {
+        cell.classList.add("flipEffect");
+    });
+}
+
+function winnerEffect(){
+    const rows = document.querySelectorAll(".table-row");
+    const cells = rows[turn-1].querySelectorAll(".table-cell");
+    cells.forEach((cell, index) => {
+        setTimeout(() => {
+            cell.classList.add("winnerEffect");
+        }, 100*index);
+    });
 }
 
 q.addEventListener("click", (letter) => {
@@ -518,14 +535,7 @@ enter.addEventListener("click", () => {
 function setWinner(){
     playSound("win");
     winner = true;
-    const listRows = document.querySelectorAll(".table-row");
-    const column = listRows[turn-1].querySelectorAll(".table-cell");
-    column.forEach((cell) => {
-        cell.classList.add("winnerEffect");
-        setTimeout(() => {
-            cell.classList.remove("winnerEffect");
-        },1000);
-    });
+    winnerEffect();
     showResult();
 }
 

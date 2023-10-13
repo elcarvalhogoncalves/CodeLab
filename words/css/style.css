@@ -145,7 +145,6 @@ h1{
 .wrong-key{
     background-color: #506058;
     color: #a0a0a0;
-    cursor: default;
 }
 
 footer p {
@@ -172,21 +171,42 @@ footer p {
 }
 
 .winnerEffect{
-    animation: elevate-vertical 1s;
+    animation: elevate-vertical .5s;
+}
+
+.flipEffect{
+    animation: flip 1s;
+}
+
+@keyframes flip {
+    0% {
+        transform: rotateY(0deg);
+        transition: .4s;
+        scale: 1;
+    }
+    50% {
+        transform: rotateY(92deg);
+        scale: 1.1;
+        transition: .4s;
+    }
+    100% {
+        transform: rotateY(0deg);
+        scale: 1;
+    }
 }
 
 @keyframes elevate-vertical {
     0% {
         transform: translateY(0);
-        transition: .4s;
+        transition: .5s;
     }
     50% {
         transform: translateY(-2.5rem);
-        transition: .4s;
+        transition: .5s;
     }
     100% {
         transform: translateY(0);
-        transition: .4s;
+        transition: .5s;
     }
 }
 
@@ -242,11 +262,11 @@ footer p {
 }
 
 .win-color{
-    background-color: rgba(13, 255, 0, 0.607);
+    background-color: rgba(13, 255, 0, 0.5);
 }
 
 .lose-color{
-    background-color: #a33a3a;
+    background-color: rgb(163, 58, 58, 0.5);
 }
 
 .modal p:first-child{
